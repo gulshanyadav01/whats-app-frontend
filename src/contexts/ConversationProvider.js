@@ -20,7 +20,7 @@ export  function ConversationsProvider({ children }) {
     const formattedConversations = conversations.map(conversation => {
         const recipients = conversation.recipients.map(recipient => {
             const contact = contacts.find(contact => {
-                return contact.id === recipient
+                return contact.id === recipients.id
             })
         })
     })
