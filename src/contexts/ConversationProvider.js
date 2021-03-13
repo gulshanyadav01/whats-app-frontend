@@ -16,6 +16,15 @@ export  function ConversationsProvider({ children }) {
             return [...prevConversations , {recipients, message:[]}]
         })
     }
+
+    const formattedConversations = conversations.map(conversation => {
+        const recipients = conversation.recipients.map(recipient => {
+            const contact = contacts.find(contact => {
+                return contact.id === recipient
+            })
+        })
+    })
+
     return (
         <ConversationsContext.Provider value = {{conversations, createConversations}}>
             {children}
